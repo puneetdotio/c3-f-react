@@ -2,7 +2,9 @@ import React from 'react'
 
 const NestedAbout = () => {
   return (
-    <div>NestedAbout</div>
+      <div>
+          <h1>about ke ander </h1>
+    </div>
   )
 }
 

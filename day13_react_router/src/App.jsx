@@ -4,7 +4,7 @@ import AppRoutes from './routes/AppRoutes'
 
 const App = () => {
   return (
-    <div className='h-screen p-2'>
+    <div>
       <Navbar/>
       <AppRoutes/>
     </div>
