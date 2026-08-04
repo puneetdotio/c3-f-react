@@ -22,7 +22,7 @@ const Contact = () => {
 						href="mailto:puneet@example.com"
 						className="block rounded-xl border border-slate-800 px-4 py-3 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-400"
 					>
-						📧 Email: puneet@example.com
+						📧 Email: puneetdotio@gmail.com
 					</a>
 					<a
 						href="https://twitter.com"
