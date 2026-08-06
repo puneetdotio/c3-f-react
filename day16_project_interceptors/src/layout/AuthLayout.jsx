@@ -3,10 +3,11 @@ import { Outlet } from 'react-router'
 
 const AuthLayout = () => {
     console.log("Auth rendering...")
-
   return (
-    <Outlet/>
-)
+      <div>
+          <Outlet/>
+    </div>
+  )
 }
 
 export default AuthLayout

@@ -1,66 +1,63 @@
-import React from 'react'
-import { createBrowserRouter, RouterProvider } from 'react-router'
-import PublicRoutes from './PublicRoutes'
-import AuthLayout from '../layouts/AuthLayout'
-import LoginPage from '../pages/LoginPage'
-import RegisterPage from '../pages/RegisterPage'
-import ProtectedRoutes from './ProtectedRoutes'
-import MainLayout from '../layouts/MainLayout'
-import HomePage from '../pages/HomePage'
-import UsersPage from '../pages/UsersPage'
-import ProductPage from '../pages/ProductPage'
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import PublicRoute from "./PublicRoute";
+import AuthLayout from "../layout/AuthLayout";
+import LoginPage from "../pages/LoginPage";
+import RegisterPage from "../pages/RegisterPage";
+import ProtectedRoute from "./ProtectedRoute";
+import MainLayout from "../layout/MainLayout";
+import HomePage from "../pages/HomePage";
+import UsersPage from "../pages/UsersPage";
+import ProductPage from "../pages/ProductPage";
 
 const AppRoutes = () => {
-    let router = createBrowserRouter([
-        {
-            path: "/",
-            element: <PublicRoutes />,
-            children: [
-                {
-                    path: "",
-                    element: <AuthLayout />,
-                    children: [
-                        {
-                            path: "",
-                            element: <LoginPage/>
-                        },
-                        {
-                            path: "register",
-                            element:<RegisterPage/>
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            path: "/main",
-            element: <ProtectedRoutes />,
-            children: [
-                {
-                    path: "",
-                    element: <MainLayout />,
-                    children: [
-                        {
-                            path: "",
-                            element: <HomePage/>,
-                        },
-                        {
-                            path: "users",
-                            element: <UsersPage/>,
-                        },
-                        {
-                            path: "products",
-                            element: <ProductPage/>
-                        }
-                    ]
-                }
-            ]
-        }
-    ])
+	let router = createBrowserRouter([
+		{
+			path: "/",
+			element: <PublicRoute />,
+			children: [
+				{
+					path: "",
+					element: <AuthLayout />,
+					children: [
+						{
+							path: "",
+							element: <LoginPage />,
+						},
+						{
+							path: "register",
+							element: <RegisterPage />,
+						},
+					],
+				},
+			],
+		},
+		{
+			path: "/main",
+			element: <ProtectedRoute />,
+			children: [
+				{
+					path: "",
+					element: <MainLayout />,
+					children: [
+						{
+							path: "",
+							element: <HomePage />,
+						},
+						{
+							path: "users",
+							element: <UsersPage />,
+						},
+						{
+							path: "products",
+							element: <ProductPage />,
+						},
+					],
+				},
+			],
+		},
+	]);
+	return <RouterProvider router={router} />;
+};
 
-  return (
-    <RouterProvider router={router}/>
-)
-}
-
-export default AppRoutes
+export default AppRoutes;
