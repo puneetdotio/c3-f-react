@@ -12,14 +12,16 @@ const App = () => {
 		try {
 			let res = await axios.get("https://fakestoreapi.com/products");
 			console.log(res);
-
 			setProductsData(res.data);
 		} catch (error) {
-			console.log(("Error while fetching the products data", error));
+			console.log("error in products api", error);
 		}
 	};
 
+	// filter function
 	let filteredData = () => {
+		console.log("filter function running...");
+
 		let result = productsData.filter((val) => {
 			return val.title.toLowerCase().includes(searchData.toLowerCase());
 		});
@@ -36,43 +38,44 @@ const App = () => {
 		}, 700);
 
 		return () => clearTimeout(timeout);
-	}, [searchData]);
+	}, 700);
 
-	// throttling...
-  useEffect(() => {
-    let handleScroll = () => {
-      if(throttle) return
+	// throttle...
+	useEffect(() => {
+		let handleScroll = () => {
+			if (throttle) return;
+			throttle = true;
 
-      console.log("scroll triggered...")
-      throttle = true;
-      setScrollY(window.scrollY)
+			console.log("scroll triggred...");
+			setScrollY(window.scrollY);
 
-      setTimeout(() => { throttle = false}, 10000)
-    }
+			setTimeout(() => {
+				throttle = false;
+			}, 10000);
+		};
 
-    window.addEventListener("scroll", handleScroll)
+		window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 
 	useEffect(() => {
 		getProductsData();
 	}, []);
-
 	return (
 		<div>
 			<h1>Debouncing...</h1>
-
 			<input
-				style={{ padding: "10px 30px" }}
+				onChange={(e) => setSearchData(e.target.value)}
 				type="text"
 				placeholder="search products"
-				onChange={(e) => setSearchData(e.target.value)}
-			/>
-
-			{productsData.map((val) => {
-				return <h1 key={val.id}>{val.title}</h1>;
-			})}
+      />
+      
+      {
+        productsData.map((val) => {
+          return <h1 key={val.id}>{ val.title}</h1>
+        })
+      }
 		</div>
 	);
 };

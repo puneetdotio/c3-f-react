@@ -1,12 +1,10 @@
 import React from 'react'
 
 const About = () => {
-    console.log("about page runs")
+    console.log("about chal gya...")
     
   return (
-      <div>
-          <h1>Hi I'm about</h1>
-    </div>
+    <div>About</div>
   )
 }
 
