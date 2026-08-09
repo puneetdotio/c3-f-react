@@ -3,20 +3,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import { decrement, increment } from './features/counterSlice';
 
 const App = () => {
-
-	let dispatch = useDispatch();
-
-	let { count } = useSelector((store) => store.counter)
-	
-	let {cartItems} = useSelector((store) => store.cart)
-	console.log(cartItems)
+  let count = useSelector((store) => store.counter.value)
+  let dispatch = useDispatch();
 
   return (
-	  <div>
-		  <h1>Count is {count} </h1>
-		  <button onClick={() => dispatch(decrement())}>Decrement</button>
-		  <button onClick={() => dispatch(increment())}>Increment</button>
-	</div>
+    <div>
+      <h2>Count is {count}</h2>
+      <button onClick={() => dispatch(decrement())}>Decrement</button>
+      <button onClick={() => dispatch(increment())}>Increment</button>
+    </div>
   )
 }
 
