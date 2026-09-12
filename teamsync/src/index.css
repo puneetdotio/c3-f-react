@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
-:root{
-    /* dark theme (by default) */
+/* dark theme default */
 
-    /* colours */
+:root{
+    /* colors */
     --primary: #181422;
-    --secondary: #1D1B20;
+    --secondary: #1D1820;
     --tertiary: #C9A74D;
 
     --success: #22c55e;
@@ -20,21 +20,20 @@
 
     /* text */
     --text-primary: #f8fafc;
-    --text-secondary: #cbd5a1;
+    --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
 
     /* border */
     --border-color: #2d3748;
 
     /* shadow */
-    --shadow-md: 0 8px 20px rgba(0,0,0,0.3)
+    --shadow-md: 0 8px  20px rgba(0, 0, 0, 0.3)
 
     /* radius */
-    --radius:md: 10px;
+    --radius-md: 10px
 }
 
 /* light theme */
-
 .light{
     /* colors */
     --primary: #6063EE;
@@ -45,11 +44,11 @@
     --warning: #ca8a04;
     --danger: #dc2626;
 
-    /* backgrounds */
+    /* background */
     --bg-main: #f8fafc;
     --bg-surface: #ffffff;
     --bg-card: #e2e8f0;
-    --bg-hover: #dbe4f0;
+    --bg-hover: ##dbe4f0;
 
     /* text */
     --text-primary: #0f172a;
@@ -60,11 +59,10 @@
     --border-color: #cbd5e1;
 
     /* shadow */
-    --shadow-md: 0 8px 20px rgba(0,0,0,0.08)
-
+    --shadow-md: #0 8px 20px rgba(0, 0, 0, 0.8)
 }
 
-/* global styles */
+/* global style */
 body{
     background: var(--bg-main);
     color: var(--text-primary);

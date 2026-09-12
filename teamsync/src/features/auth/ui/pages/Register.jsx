@@ -1,9 +1,9 @@
 import React from "react";
-import { User, Mail, Lock, Sparkles, ShieldCheck } from "lucide-react";
 import { useAuth } from "../../hooks/useAuth";
+import { Lock, Mail, ShieldCheck, Sparkles, User } from "lucide-react";
 
 const Register = () => {
-	let { register, handleSubmit, onRegisterSubmit, errors, navigate } =
+	const { navigate, register, handleSubmit, errors, onRegisterSubmit } =
 		useAuth();
 
 	return (

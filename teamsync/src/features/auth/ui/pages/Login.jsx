@@ -1,11 +1,12 @@
-import React from "react";
-import { Cloud, ArrowRightToLine } from "lucide-react";
-import { useAuth } from "../../hooks/useAuth";
+import React from 'react'
+import { useAuth } from '../../hooks/useAuth'
+import { ArrowRightToLineIcon, Cloud } from 'lucide-react';
 
 const Login = () => {
-	let { register, handleSubmit, onLoginSubmit, errors, navigate } = useAuth();
+    const { navigate, register, handleSubmit, errors, onLoginSubmit} = useAuth();
 
-	return (
+
+  return (
 		<div className="min-h-screen bg-[#09070F] relative overflow-hidden flex items-center justify-center px-4">
 			{/* Background Glow */}
 			<div className="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-purple-700/10 blur-3xl rounded-full" />
@@ -138,7 +139,7 @@ const Login = () => {
 						className="w-full h-14 rounded-xl bg-purple-600 hover:bg-purple-500 transition text-white font-semibold text-lg flex items-center justify-center gap-3"
 					>
 						Sign In
-						<ArrowRightToLine size={20} />
+						<ArrowRightToLineIcon size={20} />
 					</button>
 				</form>
 
@@ -168,6 +169,6 @@ const Login = () => {
 			</div>
 		</div>
 	);
-};
+}
 
-export default Login;
+export default Login

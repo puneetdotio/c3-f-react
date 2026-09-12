@@ -7,12 +7,12 @@ const PublicRoute = () => {
 
     if(isLoading) return <h1>Loading...</h1>
 
-    if(employee) return <Navigate to="/home" />
-    
+    if (employee) {
+        return <Navigate to="/home" />
+    }
+
   return (
-      <div>
-          <Outlet/>
-    </div>
+    <div><Outlet/></div>
   )
 }
 

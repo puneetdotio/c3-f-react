@@ -16,3 +16,7 @@ export interface ApiResponseProduct {
 	total: number;
 	skip: number;
 }
+
+export interface CounterValue{
+    count?: 0;
+}
