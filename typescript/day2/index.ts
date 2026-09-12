@@ -1,17 +1,15 @@
-type ID = string | number;
-
-type Status = "error" | "pending" | "success";
-
-type User = {
-    name: string;
-    age: number;
+type Product = {
+    id: number;
+    title: string;
+    price: number;
+    inStock: boolean;
 }
 
-interface Users{
-    name: string;
-    age: number;
+const product: Product = {
+    id: 101,
+    title: "keyboard",
+    price: 2500,
+    inStock: true,
 }
 
-interface Admin extends User{
-    permissions: string[];
-}
+console.log(product.price)
