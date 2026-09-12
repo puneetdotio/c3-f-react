@@ -1,10 +1,17 @@
+type ID = string | number;
+
+type Status = "error" | "pending" | "success";
 
 type User = {
     name: string;
-    email: string;
-    age: string;
+    age: number;
 }
 
-function createUser(user: User) {
-    
+interface Users{
+    name: string;
+    age: number;
+}
+
+interface Admin extends User{
+    permissions: string[];
 }
