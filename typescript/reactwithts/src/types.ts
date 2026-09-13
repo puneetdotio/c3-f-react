@@ -1,22 +1,11 @@
-export interface Product {
-	id: number;
-	title: string;
+export interface Products {
 	category: string;
+	description: string;
+	id: number;
 	image: string;
 	price: number;
-	description: string;
-	rating: {
-		rate: number;
-		count: number;
-	};
+	rating: { rate: number; count: number };
+	title: string;
 }
 
-export interface ApiResponseProduct {
-	data?: [];
-	total: number;
-	skip: number;
-}
 
-export interface CounterValue{
-    count?: 0;
-}

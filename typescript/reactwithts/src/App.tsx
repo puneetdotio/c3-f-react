@@ -1,34 +1,30 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import ProductCard from './components/ProductCard';
-import type { Product } from "./types";
+import { useEffect, useState } from "react";
+import type { Products } from "./types";
+import ProductsCard from './components/ProductsCard';
 
 const App = () => {
+	const [productsData, setProductsData] = useState<Products[]>([]);
 
-	const [productsData, setProductsData] = useState<Product[]>([]);
+	const getProductsData = async () => {
+		const res = await axios.get("https://fakestoreapi.com/products");
+		console.log(res);
+		setProductsData(res.data);
+	};
 
-  const getProductsData = async () => {
-    try {
-      const res = await axios.get("https://fakestoreapi.com/products")
-      console.log(res)
-      setProductsData(res.data)
-    } catch (error) {
-      console.log("Error in products api", error)
-    }
-  }
+	useEffect(() => {
+		getProductsData();
+	}, []);
 
-  useEffect(() => { getProductsData() }, [])
-  
-  return (
-    <div>
-      <h1>Count is { 0}</h1>
-      <button>Increment</button>
+	return (
+		<>
+			App
 			<div>
 				{productsData.map((val) => {
-					return <ProductCard key={val.id} product={val} />;
+					return <ProductsCard key={val.id} product={val} />;
 				})}
 			</div>
-		</div>
+		</>
 	);
 };
 
