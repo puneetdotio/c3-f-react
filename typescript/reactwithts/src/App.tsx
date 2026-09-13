@@ -1,14 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import type { Products } from "./types";
-import ProductsCard from './components/ProductsCard';
+import type { Product } from "./types";
+import ProductCard from "./components/ProductCard";
 
 const App = () => {
-	const [productsData, setProductsData] = useState<Products[]>([]);
+	const [productsData, setProductsData] = useState<Product[]>([]);
 
 	const getProductsData = async () => {
 		const res = await axios.get("https://fakestoreapi.com/products");
-		console.log(res);
+		console.log(res.data);
 		setProductsData(res.data);
 	};
 
@@ -17,14 +17,11 @@ const App = () => {
 	}, []);
 
 	return (
-		<>
-			App
-			<div>
-				{productsData.map((val) => {
-					return <ProductsCard key={val.id} product={val} />;
-				})}
-			</div>
-		</>
+		<div>
+			{productsData.map((val) => {
+				return <ProductCard key={val.id} product={val} />;
+			})}
+		</div>
 	);
 };
 
