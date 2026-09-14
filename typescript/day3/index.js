@@ -1,8 +1,16 @@
-let sum = (...rest) => {
-    let data = rest.reduce((a, v) => a + v, 0);
-    return data;
-};
-let res = sum(2341, 534, 23, 1, 23, 435, 6565, 67);
-console.log(res);
+function handleStatus(status) {
+    if (status === "loading") {
+        console.log("Loading...");
+    }
+    if (status === "success") {
+        console.log("Success");
+    }
+    if (status === "error") {
+        console.log("Something went wrong....");
+    }
+}
+handleStatus("loading");
+handleStatus("success");
+handleStatus("error");
 export {};
 //# sourceMappingURL=index.js.map
