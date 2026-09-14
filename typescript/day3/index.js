@@ -1,18 +1,23 @@
-function renderStatus(status) {
-    switch (status) {
-        case "idle":
-            return "Start";
-        case "loading":
-            return "Loading...";
-        case "success":
-            return "Done!";
-        case "error":
-            return "Something went wrong";
+function showPerson(person) {
+    if (person.role === "admin") {
+        console.log(person.permissions);
+    }
+    else {
+        console.log(person.name);
     }
 }
-console.log(renderStatus("idle"));
-console.log(renderStatus("loading"));
-console.log(renderStatus("success"));
-console.log(renderStatus("error"));
+let user1 = {
+    role: "user",
+    name: "aman",
+    age: 22,
+};
+let admin1 = {
+    role: "admin",
+    name: "purav",
+    age: 23,
+    permissions: ["edit", "delete"],
+};
+showPerson(user1);
+showPerson(admin1);
 export {};
 //# sourceMappingURL=index.js.map

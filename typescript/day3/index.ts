@@ -1,22 +1,38 @@
-type Status = "idle" | "loading" | "success" | "error";
+type User = {
+	role: "user";
+	name: string;
+	age: number;
+};
 
-function renderStatus(status: Status) {
-	switch (status) {
-		case "idle":
-			return "Start";
+type Admin = {
+	role: "admin";
+	name: string;
+	age: number;
+	permissions: string[];
+};
 
-		case "loading":
-			return "Loading...";
+type Person = User | Admin;
 
-		case "success":
-			return "Done!";
-
-		case "error":
-			return "Something went wrong";
+function showPerson(person: Person) {
+	if (person.role === "admin") {
+		console.log(person.permissions);
+	} else {
+		console.log(person.name);
 	}
 }
 
-console.log(renderStatus("idle"));
-console.log(renderStatus("loading"));
-console.log(renderStatus("success"));
-console.log(renderStatus("error"));
+let user1: User = {
+	role: "user",
+	name: "aman",
+	age: 22,
+};
+
+let admin1: Admin = {
+	role: "admin",
+	name: "purav",
+	age: 23,
+	permissions: ["edit", "delete"],
+};
+
+showPerson(user1);
+showPerson(admin1);
