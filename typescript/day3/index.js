@@ -1,16 +1,18 @@
-function handleStatus(status) {
-    if (status === "loading") {
-        console.log("Loading...");
-    }
-    if (status === "success") {
-        console.log("Success");
-    }
-    if (status === "error") {
-        console.log("Something went wrong....");
+function renderStatus(status) {
+    switch (status) {
+        case "idle":
+            return "Start";
+        case "loading":
+            return "Loading...";
+        case "success":
+            return "Done!";
+        case "error":
+            return "Something went wrong";
     }
 }
-handleStatus("loading");
-handleStatus("success");
-handleStatus("error");
+console.log(renderStatus("idle"));
+console.log(renderStatus("loading"));
+console.log(renderStatus("success"));
+console.log(renderStatus("error"));
 export {};
 //# sourceMappingURL=index.js.map

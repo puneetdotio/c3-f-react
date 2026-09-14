@@ -1,19 +1,22 @@
-type Status = "loading" | "success" | "error";
+type Status = "idle" | "loading" | "success" | "error";
 
-function handleStatus(status: Status) {
-	if (status === "loading") {
-		console.log("Loading...");
-	}
+function renderStatus(status: Status) {
+	switch (status) {
+		case "idle":
+			return "Start";
 
-	if (status === "success") {
-		console.log("Success");
-	}
+		case "loading":
+			return "Loading...";
 
-	if (status === "error") {
-		console.log("Something went wrong....");
+		case "success":
+			return "Done!";
+
+		case "error":
+			return "Something went wrong";
 	}
 }
 
-handleStatus("loading");
-handleStatus("success");
-handleStatus("error");
+console.log(renderStatus("idle"));
+console.log(renderStatus("loading"));
+console.log(renderStatus("success"));
+console.log(renderStatus("error"));
