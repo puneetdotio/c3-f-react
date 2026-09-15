@@ -1,23 +1,5 @@
-function getValue(value: string) {
-    return value;
-}
+const names: Array<string> = ["aman", "gagan"];
+console.log(names);
 
-const result = getValue("Puneet");
-
-console.log(result);
-
-function getNumber(value: number): number {
-    return value;
-}
-
-const numResult = getNumber(77);
-console.log(numResult);
-
-// generics
-function identity<T>(value: T): T{
-    return value;
-}
-
-console.log(identity("puneet"))
-console.log(identity(880))
-console.log(identity(true))
+const num: Array<number> = [1, 2, 3, 4, 5, 6];
+console.log(num);

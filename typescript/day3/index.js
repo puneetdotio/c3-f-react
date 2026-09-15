@@ -1,19 +1,6 @@
-function getValue(value) {
-    return value;
-}
-const result = getValue("Puneet");
-console.log(result);
-function getNumber(value) {
-    return value;
-}
-const numResult = getNumber(77);
-console.log(numResult);
-// generics
-function identity(value) {
-    return value;
-}
-console.log(identity("puneet"));
-console.log(identity(880));
-console.log(identity(true));
+const names = ["aman", "gagan"];
+console.log(names);
+const num = [1, 2, 3, 4, 5, 6];
+console.log(num);
 export {};
 //# sourceMappingURL=index.js.map
