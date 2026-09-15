@@ -1,38 +1,13 @@
-type User = {
-	role: "user";
-	name: string;
-	age: number;
-};
+// any
 
-type Admin = {
-	role: "admin";
-	name: string;
-	age: number;
-	permissions: string[];
-};
+let value1: any = "aman";
 
-type Person = User | Admin;
+value1 = 23;
+value1 = []
+value1 = {}
 
-function showPerson(person: Person) {
-	if (person.role === "admin") {
-		console.log(person.permissions);
-	} else {
-		console.log(person.name);
-	}
+let value2: unknown = "Puneet";
+
+if (typeof value2 === "string") {
+    console.log(value2.toUpperCase())
 }
-
-let user1: User = {
-	role: "user",
-	name: "aman",
-	age: 22,
-};
-
-let admin1: Admin = {
-	role: "admin",
-	name: "purav",
-	age: 23,
-	permissions: ["edit", "delete"],
-};
-
-showPerson(user1);
-showPerson(admin1);

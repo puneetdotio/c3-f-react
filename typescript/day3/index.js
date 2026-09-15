@@ -1,23 +1,11 @@
-function showPerson(person) {
-    if (person.role === "admin") {
-        console.log(person.permissions);
-    }
-    else {
-        console.log(person.name);
-    }
+// any
+let value1 = "aman";
+value1 = 23;
+value1 = [];
+value1 = {};
+let value2 = "Puneet";
+if (typeof value2 === "string") {
+    console.log(value2.toUpperCase());
 }
-let user1 = {
-    role: "user",
-    name: "aman",
-    age: 22,
-};
-let admin1 = {
-    role: "admin",
-    name: "purav",
-    age: 23,
-    permissions: ["edit", "delete"],
-};
-showPerson(user1);
-showPerson(admin1);
 export {};
 //# sourceMappingURL=index.js.map
