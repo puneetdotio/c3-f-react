@@ -1,11 +1,19 @@
-// any
-let value1 = "aman";
-value1 = 23;
-value1 = [];
-value1 = {};
-let value2 = "Puneet";
-if (typeof value2 === "string") {
-    console.log(value2.toUpperCase());
+function getValue(value) {
+    return value;
 }
+const result = getValue("Puneet");
+console.log(result);
+function getNumber(value) {
+    return value;
+}
+const numResult = getNumber(77);
+console.log(numResult);
+// generics
+function identity(value) {
+    return value;
+}
+console.log(identity("puneet"));
+console.log(identity(880));
+console.log(identity(true));
 export {};
 //# sourceMappingURL=index.js.map

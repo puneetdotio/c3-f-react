@@ -1,13 +1,23 @@
-// any
-
-let value1: any = "aman";
-
-value1 = 23;
-value1 = []
-value1 = {}
-
-let value2: unknown = "Puneet";
-
-if (typeof value2 === "string") {
-    console.log(value2.toUpperCase())
+function getValue(value: string) {
+    return value;
 }
+
+const result = getValue("Puneet");
+
+console.log(result);
+
+function getNumber(value: number): number {
+    return value;
+}
+
+const numResult = getNumber(77);
+console.log(numResult);
+
+// generics
+function identity<T>(value: T): T{
+    return value;
+}
+
+console.log(identity("puneet"))
+console.log(identity(880))
+console.log(identity(true))
