@@ -1,17 +1,13 @@
-/* generics function with array */
-// without generics
+const users = [
+    {
+        name: "aman",
+        age: 33,
+    },
+];
 function firstItem(items) {
     return items[0];
 }
-const result = firstItem(["Punnet", "Raghav"]);
+const result = firstItem(users);
 console.log(result);
-// with generics
-function firstItem2(items) {
-    return items[0];
-}
-const result2 = firstItem2(["Aman", "Pawan"]);
-console.log(result2);
-const result3 = firstItem2([1, 2, 3, 4, 5]);
-console.log(result3);
 export {};
 //# sourceMappingURL=index.js.map
