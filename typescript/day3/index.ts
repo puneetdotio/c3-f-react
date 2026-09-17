@@ -1,38 +1,21 @@
-function getValue(value: string): string {
-	return value;
+
+/* generics function with array */
+// without generics
+function firstItem(items: any[]) {
+    return items[0]
 }
 
-const result = getValue("Puneet");
-console.log(result);
+const result = firstItem(["Punnet", "Raghav"])
+console.log(result)
 
-function getValue2(value: number): number {
-	return value;
+// with generics
+function firstItem2<T>(items: T[]): T{
+    return items[0]
 }
 
-const result2 = getValue2(4545);
-console.log(result2);
+const result2 = firstItem2(["Aman", "Pawan"])
+console.log(result2)
 
-function identity<T>(value: T): T{
-    return value;
-}
-
-const result3 = identity("Puneet")
+const result3 = firstItem2([1,2,3,4,5])
 console.log(result3)
-
-const result4 = identity(2143432)
-console.log(result4)
-
-function identity2(value: string | number): string | number{
-    return value;
-}
-
-const result5 = identity2("Aman")
-console.log(result5)
-
-const result6 = identity2(687364313)
-console.log(result6)
-
-const names : string[] = ["Puneet", "Aman"]
-
-const names2 : Array<string> = ["Raghav", "Pawan"]
 
