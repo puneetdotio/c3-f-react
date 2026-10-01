@@ -1,19 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function add(a, b) {
-    return a + b;
+class Person {
+    name;
+    age;
+    birthYear;
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+        this.birthYear = new Date().getFullYear() - age;
+    }
+    greet() {
+        console.log(`Hello my name is ${this.name} and I am ${this.age} years old.`);
+    }
 }
-console.log(add(5, 5));
-function greet(name, greeting) {
-    return `${greeting}, ${name}`;
-}
-console.log(greet("aman", "Hello"));
-function greet2(name, greeting = "hello") {
-    console.log(`${name}, ${greeting}`);
-}
-greet2("aman");
-function sumAll(...numbers) {
-    return numbers.reduce((acc, num) => acc + num, 0);
-}
-console.log(sumAll);
+const person = new Person("Zia", 25);
+person.greet();
 //# sourceMappingURL=index.js.map

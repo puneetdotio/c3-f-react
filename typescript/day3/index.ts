@@ -1,23 +1,18 @@
-function add(a: number, b: number): number {
-	return a + b;
+class Person{
+    private name: string;
+    public age: number;
+    protected readonly birthYear: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+        this.birthYear = new Date().getFullYear() - age;
+    }
+
+    greet() {
+        console.log(`Hello my name is ${this.name} and I am ${this.age} years old.`)
+    }
 }
 
-console.log(add(5, 5));
-
-function greet(name: string, greeting?: string): string {
-	return `${greeting}, ${name}`;
-}
-
-console.log(greet("aman", "Hello"));
-
-function greet2(name: string, greeting: string = "hello"): void {
-	console.log(`${name}, ${greeting}`);
-}
-
-greet2("aman");
-
-function sumAll(...numbers: number[]): number {
-	return numbers.reduce((acc, num) => acc + num, 0);
-}
-
-console.log(sumAll);
+const person = new Person("Zia", 25)
+person.greet();
