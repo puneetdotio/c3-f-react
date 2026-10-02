@@ -1,18 +1,14 @@
-class Person{
-    private name: string;
-    public age: number;
-    protected readonly birthYear: number;
-
-    constructor(name: string, age: number) {
-        this.name = name;
-        this.age = age;
-        this.birthYear = new Date().getFullYear() - age;
-    }
-
-    greet() {
-        console.log(`Hello my name is ${this.name} and I am ${this.age} years old.`)
-    }
+interface Greetable {
+	greet(): void;
 }
 
-const person = new Person("Zia", 25)
-person.greet();
+class Developer implements Greetable {
+	constructor(public username: string) {}
+
+	greet(): void {
+		console.log(`Hello I am ${this.username} and I love to Code ! `);
+	}
+}
+
+const dev = new Developer("TS Lover");
+dev.greet();

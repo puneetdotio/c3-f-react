@@ -1,18 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class Person {
-    name;
-    age;
-    birthYear;
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-        this.birthYear = new Date().getFullYear() - age;
+class Developer {
+    username;
+    constructor(username) {
+        this.username = username;
     }
     greet() {
-        console.log(`Hello my name is ${this.name} and I am ${this.age} years old.`);
+        console.log(`Hello I am ${this.username} and I love to code!`);
     }
 }
-const person = new Person("Zia", 25);
-person.greet();
+const dev = new Developer("TS lover");
+dev.greet();
 //# sourceMappingURL=index.js.map
