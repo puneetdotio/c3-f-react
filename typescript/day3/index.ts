@@ -1,14 +1,22 @@
-interface Greetable {
-	greet(): void;
+interface BussinesPartner {
+    name: string;
+    credit: number;
 }
 
-class Developer implements Greetable {
-	constructor(public username: string) {}
-
-	greet(): void {
-		console.log(`Hello I am ${this.username} and I love to Code ! `);
-	}
+interface Identity{
+    id: number;
+    email: string;
 }
 
-const dev = new Developer("TS Lover");
-dev.greet();
+function signContract(employee: BussinesPartner & Identity) {
+    console.log(`Signed a contract with ${employee.name} (${employee.email}) having credit ${employee.credit}`)
+}
+
+const newEmployee: BussinesPartner & Identity = {
+    name: "Besma",
+    credit: 750,
+    id: 101,
+    email: "besma@example.com",
+}
+
+signContract(newEmployee);
