@@ -1,13 +1,23 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function signContract(employee) {
-    console.log(`Signed a contract with ${employee.name} (${employee.email}) having credit ${employee.credit}`);
+const data = [
+    { id: 1, name: "zia", role: "admin" },
+    { id: 2, name: "Gia", role: "user" },
+    { id: 3, name: "Noora", role: "guest" },
+];
+function findUserById(id) {
+    return data.find((user) => user.id === id);
 }
-const newEmployee = {
-    name: "Besma",
-    credit: 750,
-    id: 101,
-    email: "besma@example.com",
-};
-signContract(newEmployee);
+function logUserDetails(user) {
+    console.log(`Name: ${user.name}, Role: ${user.role}`);
+}
+function mergeObjects(obj1, obj2) {
+    return { ...obj1, ...obj2 };
+}
+const user = findUserById(1);
+if (user) {
+    logUserDetails(user);
+}
+const merged = mergeObjects({ id: 4, name: "Mariyz", role: "user" }, { age: 30 });
+console.log(merged);
 //# sourceMappingURL=index.js.map

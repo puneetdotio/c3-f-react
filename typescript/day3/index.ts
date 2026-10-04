@@ -1,22 +1,36 @@
-interface BussinesPartner {
-    name: string;
-    credit: number;
+type User = {
+	id: number;
+	name: string;
+	role: "admin" | "user" | "guest";
+};
+
+const data: User[] = [
+	{ id: 1, name: "zia", role: "admin" },
+	{ id: 2, name: "Gia", role: "user" },
+	{ id: 3, name: "Noora", role: "guest" },
+];
+
+function findUserById(id: number): User | undefined {
+	return data.find((user) => user.id === id);
 }
 
-interface Identity{
-    id: number;
-    email: string;
+function logUserDetails(user: User): void {
+	console.log(`Name: ${user.name}, Role: ${user.role}`);
 }
 
-function signContract(employee: BussinesPartner & Identity) {
-    console.log(`Signed a contract with ${employee.name} (${employee.email}) having credit ${employee.credit}`)
+type MergeObject = User & { age: number };
+
+function mergeObjects(obj1: User, obj2: { age: number }): MergeObject {
+	return { ...obj1, ...obj2 };
 }
 
-const newEmployee: BussinesPartner & Identity = {
-    name: "Besma",
-    credit: 750,
-    id: 101,
-    email: "besma@example.com",
+const user = findUserById(1);
+if (user) {
+	logUserDetails(user);
 }
 
-signContract(newEmployee);
+const merged = mergeObjects(
+	{ id: 4, name: "Mariyz", role: "user" },
+	{ age: 30 },
+);
+console.log(merged);
